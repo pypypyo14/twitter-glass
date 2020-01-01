@@ -1,8 +1,33 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.container{
+  margin: 15px;
 }
 
-a {
-  color: #00B7FF;
+h1{
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+button{
+  width: 50px;
+  border: none;
+  background: #263959;
+  color: #fafafa;
+  margin: 10px 10px 0px 10px;
+}
+
+button:hover{
+  background: #6d819c;
+}
+
+button:active{
+  background: #55967e;
+}
+
+button:focus{
+  outline:0;
+}
+
+#cal-heatmap{
+  margin: 20px 0px 20px;
 }
