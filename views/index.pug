@@ -2,11 +2,15 @@ extends layout
 
 block content
   h1= title
-  button#previous prev
-  button#next next
-  #cal-heatmap
+  .user
+    span @
+    input(type="text")#userid
+    button#user check
+  .heatmap
+    #cal-heatmap
 
 block includes
+  script(type="text/javascript" src="//code.jquery.com/jquery-3.4.1.min.js")
   script(type="text/javascript" src="//d3js.org/d3.v3.min.js")
   script(type="text/javascript" src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js")
   script(type="text/javascript" src="javascripts/main.js")

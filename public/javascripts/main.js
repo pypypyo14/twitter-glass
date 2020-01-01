@@ -4,20 +4,28 @@ let year = now.getFullYear();
 let month = now.getMonth();
 let day = now.getDate();
 
-const aYearAgo = new Date(now.getFullYear() - 1, now.getMonth());
+let twitterUser = "";
+
+function fillHeatmap(twitterUser) {
+    let endpoint = 'api/v1/?user=' + twitterUser;
+    fetch(endpoint).then(function (response) {
+        return response.json();
+    }).then(function (json) {
+        cal.update(json);
+    });
+};
+
+$('#user').on('click', function () {
+    twitterUser = $('input#userid').val();
+    fillHeatmap(twitterUser);
+})
 
 cal.init({
     itemSelector: "#cal-heatmap",
     domain: "month",
     subdomain: "day",
-    start: aYearAgo,
-    minDate: new Date(2017, 1),
-    maxDate: new Date(),
+    minDate: new Date(2019, 1),
+    maxDate: new Date(2019, 12),
     itemName: ["tweet", "tweets"],
     subDomainTextFormat: "%d",
-    previousSelector: "#previous",
-    nextSelector: "#next",
-    data: {
-        "1577861405": 30
-    }
 });
